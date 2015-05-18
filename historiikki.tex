@@ -30,7 +30,7 @@
 % dokumentin reunaviiva?
 \usepackage{framed}
 
-% marginaalit, ehkä parempi tapa tehdä aikajana
+% marginaalit, ehkä parempi tapa tehdä aikajana -- ei käytössä
 %\usepackage{marginnote}
 
 % tavutus
@@ -44,8 +44,9 @@
 
 
 \title{Helsinki Hacklabin historiikki}
-\author{Teppo Jussmäki / jssmk}
+\author{Teppo, Jari, ym.}
 
+% --- ei käytössä
 % aikajanalle menevä teksti
 %\newcommand{\aikajana}[1]{
  % \parbox[b]{0.32\textwidth}{#1}
@@ -61,8 +62,12 @@
 \newcommand*\ymp[1]{\tikz[baseline=(char.base)]{
             \node[shape=circle,draw,inner sep=2pt, fill=white] (char) {#1};}}
 
+
+%%% asetteluvirheiden etsimiseen %%%%
 % tällä voi testata aikajanan elementtien asettelua {red}
 \newcommand{\varitys}{white}
+%%%%%%%%%%%%%%%%%%%%%%
+
 
 % näiden kanssa on sitten kaikenlaista säätämistä...
 \newlength{\uXa}
@@ -71,9 +76,8 @@
 \setlength{\uXb}{0cm}
 \newlength{\uXc}
 \setlength{\uXc}{1cm}
-
 \newlength{\aXa}
-\setlength{\aXa}{1cm}
+\setlength{\aXa}{4cm}
 \newlength{\aXb}
 \setlength{\aXb}{3cm}
 
@@ -157,7 +161,6 @@
 \newlength{\xoffset}
 \newlength{\yoffset}
 \setlength{\yoffset}{0.5\dimexpr\paperheight-\ruleheight}
-
 \AddToShipoutPicture{
     \ifodd\value{page}
        \setlength{\xoffset}{\distance}
@@ -170,11 +173,14 @@
 }
 
 
+
 % näitä voi kokeilla saadakseen sivun parillisuuden tarkastuksen kuntoon
+% tällä hetkellä aikajanalle syntyy orpo- ja leskiriviä helposti, joten näitä pitää yrittää säätää
 %\easypagecheck
 \strictpagecheck
 
-% orporivit
+
+% orpo- ja leskirivit kuntoon leipätekstissä
 \usepackage[all]{nowidow}
 
 
@@ -183,7 +189,7 @@
 %tämän avulla saa laatikkojen reunat nollaksi
 \fboxsep0pt
 
-
+% en muista mikä tämä oli...
 \begin{tikzpicture}[node distance = \len, auto]
 \tikzset{
     line/.style = {draw},
@@ -195,12 +201,16 @@
 \setsansfont{Tahoma}
  
 
+%tätä ei nyt vielä ainakaan ole otettu käyttöön
 %\section{Introduction}
 %Hacklabin historiikki
 
 
 % esimerkki täytetekstistä
 %\textcolor{gray}{\lipsum[1]}
+
+
+%%%%%%% teksti alkaa %%%%%%%%%%%%%
 
 \section*{Ennen kuin oli mitään}
 
@@ -235,7 +245,7 @@ Alkuvuodesta toiminnasta kiinnostuneet kokoontuivat Hakaniemen Cafe Javassa. Tä
  
  \jana{18.1.2010 Nettiosoite hacklab.fi}
 
-Kahvilasta siirryttiin pian seuraavaan paikkaan: maaliskuusta lähtien Hacklab piti majaansa Hub Helsingin tiloissa, hulppeasti aivan Aleksanterintorin nurkalla. Tilassa saatiin säilyttää työkaluja sekä kirjoja, mutta vähänkään sotkuisempaan työhön paikka ei soveltunut. Itsenäisemmän rakentelutilan vuokraaminen oli tavoitteena koko ajan, ja taloudellisesti tämä näytti koko ajan mahdollisemmalta. Huhtikuussa alkoi kolehdin kerääminen vuokrapuskuria varten ennen kuin mitään tilaa oli edes olemassa, sillä hyvän kohteen löytyessä oli huolehdittava myös takuuvuokran maksusta.
+Kahvilasta siirryttiin pian seuraavaan paikkaan: maaliskuusta lähtien Hacklab piti majaansa Hub Helsingin tiloissa, hulppeasti aivan Senaatintorin nurkalla. Tilassa saatiin säilyttää jonkin verran työkaluja sekä kirjoja, mutta vähänkään sotkuisempaan työhön paikka ei soveltunut. Itsenäisemmän rakentelutilan vuokraaminen oli tavoitteena koko ajan, ja taloudellisesti tämä näytti koko ajan mahdollisemmalta. Huhtikuussa alkoi kolehdin kerääminen vuokrapuskuria varten ennen kuin mitään tilaa oli edes olemassa, sillä hyvän kohteen löytyessä oli huolehdittava myös takuuvuokran maksusta.
 
 Hacklab lähti heti perustamisvuonnaan heti mukaan Model Expoon, Assembly Summeriin sekä Alt Partylle. Model Expolle lähtö onnistui jo ennen kuin yhdistys oli \jana{30.1.2010 ensimmäinen avoin päivä taidetila Ptarmiganissa}saanut vielä edes vuokrattua omaa tilaa. Esille saatiin Jarin Hanoin tornit, Söbötti ja skooppikello, Kimin servo-ohjattu kuulalabyrintti ja Basscadetin matriisisekvensseri. Assemblyn mennessä yhdistyksellä oli jo noin seitsemänkymmentä jäsentä ja ständille oli saatu yksi keskeneräinen ja toinen toimiva 3D-tulostin – ei tosin oma.
 
@@ -309,11 +319,11 @@ Ensi kertaa yhdistyksen alkuvaiheiden ongelmien jälkeen yhdistys joutui miettim
 
 Hacklabin piti keksiä itsensä uudestaan. Kevään edetessä tuli yhä selvemmäksi, ettei toiminta voinut jatkua nykyuodossaan enää Nilsiänkadun tilassa. Oli uskallettava tehdä seuraava iso siirto, joka joko onnistuisi tai pahimmillaan veisi yhdistyksen vararikkoon. Valmista hacklabille toimivaa tilaa ei tietenkään löydy mistään suoraan, joten oli nähtävä vaivaa sekä uuden tilan rakentamiseksi että vanhan tilan tyhjentämiseksi.
 
-Kesällä toteutettu jäsenkysely osoitti, että yhdistyksen aktiiveista huomattava osa asui pääkaupunkiseudun länsipuolella. Avaintenhaltijoiden asuinsijainteja tarkasteltaessa yhdistykseme oli suorastaan espoolainen. Kun otettiin huomioon jäsenten asuinpaikat, etsittävän tilan keskeinen sijainti, liikenneyhteydet ja teollisuuskiinteistöille kaavoitetut alueet, oli Pitäjänmäki paras vaihtoehto. Uutta tilaa etsittäessä tärkeyslista muotoutui sitä mukaa kun ymmärrys parhaiten sopivasta tilasta kehittyi ja moni lupaava vuokrakohde osoittautui huonoksi vaihtoehdoksi. Neliöitä kaivattiin lisää, metallityöskentelylle tarvittiin oma huone ja oma ulko-ovi nousi myös vaatimuslistalle. Tästä syystä toimisto- ja toimitilojen etsimisestä siirryttiin nopeasti sotkuista työskentelyä sietävämmän tuotantotilan hakuun.
+Kesällä toteutettu jäsenkysely osoitti, että yhdistyksen aktiiveista huomattava osa asui pääkaupunkiseudun länsipuolella. Avaintenhaltijoiden asuinsijainteja tarkasteltaessa yhdistykseme oli suorastaan espoolainen. Kun otettiin huomioon jäsenten asuinpaikat, etsittävän tilan keskeinen sijainti, liikenneyhteydet ja teollisuuskiinteistöille kaavoitetut alueet, oli Pitäjänmäki paras vaihtoehto. Uutta tilaa etsittäessä tärkeyslista muotoutui sitä mukaa kun ymmärrys parhaiten sopivasta tilasta kehittyi ja moni lupaava vuokrakohde osoittautui huonoksi vaihtoehdoksi. Neliöitä kaivattiin lisää, metallityöskentelylle tarvittiin oma huone ja oma ulko-ovi nousivat vaatimuslistalla tärkeille sijoille. Tästä syystä toimisto- ja toimitilojen etsimisestä siirryttiin nopeasti sotkuista työskentelyä sietävämmän tuotantotilan hakuun.
 
 \merkkitapahtuma{26.9.2014 Takkatien tilan vuokrasopimus, muutto voi alkaa}
 
-Pitäjänmäestä löytyi lopulta soveltuva tila ja päätös vuokraamisesta syntyi monien yksityiskohtien selvittyä. Vuokrahinnan kasaan kokoamiseksi Hacklab ei olisi pärjännyt pelkästään omien jäsenten maksuilla. Yhteistyötä Suomen Avaruustutkimusseuran kanssa oli neuvoteltu jo alkusyksystä, ja alivuokrasopimuksen turvin Takkatien tila oli mahdollista järjestää. Avoimen lähdekoodin osuuskunta E-lli sai muuton yhteydessä myös oman alivuokrahuoneen uudesta tilasta. Muuton yhteydessä suomalaisten hacklab-yhdistysten välistä yhteistyötä jatkettiin lisää avaamalla syyskuussa kaikkien paikallisten yhdisten yhteinen keskustelufoorumi. Myös uudet perusteilla olevat hacklabit ovat voineet hyödyntää hacklab.fi-yhteistyötä.
+Uutta tilaa kesällä etsinyt toimikunta löysi lopulta Pitäjänmäestä soveltuvan tilan puolikkaan, ja päätös vuokraamisesta syntyi monien yksityiskohtien selvittyä. Vuokrahinnan kasaan kokoamiseksi Hacklab ei olisi pärjännyt pelkästään omien jäsenten maksuilla. Yhteistyötä Suomen Avaruustutkimusseuran kanssa oli neuvoteltu jo alkusyksystä, ja alivuokrasopimuksen turvin Takkatien tila oli mahdollista järjestää. Avoimen lähdekoodin osuuskunta E-lli sai muuton yhteydessä myös oman alivuokrahuoneen uudesta tilasta. Muuton yhteydessä suomalaisten hacklab-yhdistysten välistä yhteistyötä jatkettiin lisää avaamalla syyskuussa kaikkien paikallisten yhdisten yhteinen keskustelufoorumi. Myös uudet perusteilla olevat hacklabit ovat voineet hyödyntää hacklab.fi-yhteistyötä.
 
 Muutosta huolimatta digitaalielektroniikan kurssi \textit{dEEP} saattin käynnistettyä uudelleen alkusyksyllä 2014. Aiemmasta oppineina kurssimateriaalista suunniteltiin paljon sisältöä uusiksi, erityisesti harjoitustöiden puolella. Nyt pyrittiin rakentamaan joka kerta leipälaudan kanssa esimerkkikytkentöjä käsitellyistä aiheista. Kurssille valittiin rauhallinen etenemistahti, ja koko syksy saatiinkin kulutettua aloittelijaystävällisesti peruslogiikoiden parissa. Vaikka kevällä oltiin jo edetty CPLD-maailmaan ja FPGA:han, on kurssimaisen linjan vuoksi opetustilanne pysynyt kasassa ihan eri tavalla kuin viimeksi.
 
