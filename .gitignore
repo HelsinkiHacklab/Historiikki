@@ -1,0 +1,3 @@
+#.aux ja .log saavat jäädä pois
+*.aux
+*.log
