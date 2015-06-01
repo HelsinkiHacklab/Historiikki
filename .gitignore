@@ -1,3 +1,4 @@
 #.aux ja .log saavat jäädä pois
 *.aux
 *.log
+historiikki.synctex.gz
