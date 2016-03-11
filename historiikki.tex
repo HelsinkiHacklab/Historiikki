@@ -100,6 +100,7 @@
 
 % merkkitapahtuma, janalla isosti näkyvä
 \newcommand{\merkkitapahtuma}[1]{
+\vspace{0.5cm}
 \ifodd\value{page}
         \colorbox{\varitys}{
         \parbox{17cm}{
@@ -121,14 +122,15 @@
             \end{tikzpicture}
         \end{minipage}}
     \hspace{4cm}
-\fi 
+\fi
+\vspace{0.5cm}
 }
 
 
 % vuosi vaihtuu
 \newcommand{\uusivuosi}[1]{
-\ifodd\value{page}
-        \colorbox{\varitys}{   % oikealla
+\colorbox{\varitys}{
+\ifodd\value{page} % oik
         \parbox{14.77cm}{
         \hfill
         \begin{tikzpicture}
@@ -136,18 +138,19 @@
                  \ymp{{#1}}
             \end{minipage}
         \end{tikzpicture} 
-    }}
+    }
 \else
     \hspace{-3.0cm}
-    \colorbox{\varitys}{
-        \begin{minipage}{2cm}
+        \begin{minipage}{0cm}
             \begin{tikzpicture}
                           \ymp{{#1}}
             \end{tikzpicture}
-        \end{minipage}}
-    \hspace{3.1cm}
+        \end{minipage}
+    \hspace{3.0cm}
 \fi
+}
 %\vspace{-1.5cm}
+\\
 }
 
 % tämän avulla saadaan aikaan aikajanan viiva
@@ -174,10 +177,11 @@
 
 
 
+
 % näitä voi kokeilla saadakseen sivun parillisuuden tarkastuksen kuntoon
 % tällä hetkellä aikajanalle syntyy orpo- ja leskiriviä helposti, joten näitä pitää yrittää säätää
 %\easypagecheck
-\strictpagecheck
+\usepackage{changepage}
 
 
 % orpo- ja leskirivit kuntoon leipätekstissä
@@ -209,6 +213,16 @@
 % esimerkki täytetekstistä
 %\textcolor{gray}{\lipsum[1]}
 
+%%%%%%%% pääotsikko %%%%%%%%%%%%%
+
+{\centering
+	{\scshape\LARGE Helsinki Hacklabin historiikki \par}
+	\vspace{0.5cm}
+	{\scshape\Large Pöytä katossa \par}
+	\vspace{1cm}
+	{\itshape Versio \today\par}
+}
+\vspace{3cm}
 
 %%%%%%% teksti alkaa %%%%%%%%%%%%%
 
@@ -222,20 +236,24 @@ Monttu tai Luola on ehtinyt pitkän historiansa aika sijaita eri paikoissa Pitk�
 Nykyisistä jäsenistämme joillakin on erilaisen opintojen lisäksi aikaisempaa taustaa radioamatööritoiminnasta, robottiyhdistyksistä, opiskelijayhdistysten elektroniikkakerhoista, demoskenestä ja avoimen lähdekoodin projekteista. Monet ovat kuitenkin aloitelleet elektroniikkaan, 3D-tulostamiseen, robotteihin ja muihin projekteihin tutustumisen itsenäisesti tai ensi kertaa vasta Hacklabin toiminnassa.
 
 \uusivuosi{2009} %%%%%%%%%%%%  2009 %%%%%%%%%%%%%%%
-\section*{Kaksi Hacklabia?}
+%\section*{Kaksi Hacklabia?}
+\textbf{Kaksi Hacklabia?}
 
-Hackerspace-toimintaa voi kuvailla kansainväliseksi liikkeeksi, joka on lähtöisin Saksasta ja saanut nykyisenkaltaisen muotonsa Yhdysvalloissa. Mistä syystä toiminta lähti liikkeelle Suomessa juuri vuonna 2009? Tuolloin julkaistiin mm. RepRap-projektin versio \textit{Mendel}, joka oli ensimmäisiä harrastajabudjetille sopivia ja toimiviksi todettuja 3D-tulostimia. Arduino-kehitysalustat olivat ehtineet yleistyä, ja niissä oli nyt ohjelmointia helpottavat USB-liittimet. Kiinasta tilattavan roinan helppous oli koukuttavaa, omien piirilevyjen pientuontanto tuli mahdolliseksi kenelle tahansa ja\jana{28.10.2009 Sähköpostilista hack-tilan perustamisesta Helsinkiin aukeaa} eBaysta nyt ei kiinnostava tavara koskaan loppunut. Hackerspace-toiminta oli ollut jo jonkin aikaa kovassa nosteessa muualla maailmassa, joten oli aika saada vastaavaa myös Suomeen. Yhdistyksen alkusysäys tapahtui RepRap-foorumin kautta. Ensimmäisiä ajatuksia yhteisöllisesti toimivasta pajasta heitettiin ilmaan helmikuussa. Tuolloin tilaan ajateltiin tulevan mm. yhteinen 3D-tulostin, työkaluja ja elektroniikan mittalaitteita, mitkä lopulta toteutuivatkin.
+Hackerspace-toimintaa voi kuvailla kansainväliseksi liikkeeksi, joka on lähtöisin Saksasta ja saanut nykyisenkaltaisen muotonsa Yhdysvalloissa. Mistä syystä toiminta lähti liikkeelle Suomessa juuri vuonna 2009? Tuolloin julkaistiin mm. RepRap-projektin versio \textit{Mendel}, joka oli ensimmäisiä harrastajabudjetille sopivia ja toimiviksi todettuja 3D-tulostimia. Arduino-kehitysalustat olivat ehtineet yleistyä, ja niissä oli nyt ohjelmointia helpottavat USB-liittimet. Kiinasta tilattavan roinan helppous oli koukuttavaa, omien piirilevyjen pientuontanto tuli mahdolliseksi kenelle tahansa ja eBaysta nyt ei kiinnostava tavara koskaan loppunut. Hackerspace-toiminta oli ollut jo jonkin aikaa kovassa nosteessa muualla maailmassa, joten oli aika saada vastaavaa myös Suomeen. Yhdistyksen alkusysäys tapahtui RepRap-foorumin kautta. Ensimmäisiä ajatuksia yhteisöllisesti toimivasta pajasta heitettiin ilmaan helmikuussa. Tuolloin tilaan ajateltiin tulevan mm. yhteinen 3D-tulostin, työkaluja ja elektroniikan mittalaitteita, mitkä lopulta toteutuivatkin.
 
-\jana{8.11.2009 Ensimmäinen tapaaminen ennen yhdistyksen perustamista}
+\jana{28.10.2009 Sähköpostilista hack-tilan perustamisesta Helsinkiin aukeaa}
 
 Samaan aikaan toisaalla jokin ulkopuolinen ryhmä teki nopeita liikkeitä. Kun nyt olemassa oleva yhdistys vasta tunnusteli toiminnan mahdollisuuksia, kokoontui demoamaan projektejaan ja pohtimaan omia tilojaan. Kesällä 2009 hacklabin kaltaista toimintaa yritettiin ensi kertaa vallatussa talossa lähellä Kalasataman metroasemaa. Paikan päällä kävi tutustumassa myös joitakin yhdistyksemme jäseniä, mutta varsinaista jatkumoa nykyiselle toiminnallemme tästä ei muodostanut. Talo osoittautui vääränlaiseksi ympäristöksi: vallatussa tilassa ympärillä liikkuvia ihmisiä ei voitu oppia tuntemaan ja tavaroita olisi jouduttu säilyttämään pienessä ikkunattomassa pannuhuoneessa. Muualla maailmassa on ollut onnistuneita hakkeritiloja vallatuissa taloissa, mutta Kalasatamassa tämä ei onnistunut. Keskinäistä luottamusta ei syntynyt ja ensimmäinen yritys kuivuikin lopulta kasaan ennen kuin talo ehdittiin purkaa.
+
+\jana{8.11.2009 Ensimmäinen tapaaminen ennen yhdistyksen perustamista}
 
 Uuden tilan perustamisessa ei ollut oikopolkuja edulliseen vuokraan. Vallattu talo olisi ollut edullinen mutta liian rauhaton, ja kaupungin tukemat harrastetilat olivat nuorison toimintaan tarkoitettuja. Oikeushenkilön eli yhdistyksen perustaminen osoittautui olevan ainoa tapa pystyä neuvottelemaan omista tiloista. Järjestäytymistä hidasti kuitenkin joidenkin jäsenten pinttymät ja rahoituksen puute. Joukkoon oli liittynyt muun muassa nimettömänä pysytellyt kryptoanarkisti, joka vaati saada käyttää pseudonyymiään joka tilanteessa, eivätkä aivan kaikki muutkaan olleet heti järjestäytymisen kannalla. Näistä syistä toiminta jatkui epävirallisemmassa muodossa kirjastoissa ja kahviloissa loppuvuoden ajan.
 
 Kokeellisen elektroniikan seura Koelse on ollut olemassa – tai ainakin siinä olevat jäsenet ovat tunteneet toisensa – jo vaikka kuinka pitkään. Hacklabin käydessä seuran tiloissa he olivat jo sijainneet Nilsiänkadun vanhassa Orionin rakennuksessa pidemmän aikaa, ja Karttu oli myös yhteydessä välittäjään saman rakennuksen muista vapaana olevista tiloista. Vaikka ryhmät löysivätkin yhteisiä intressejä nopeasti, olivat toiminnan mallit lähtökohdiltaan erilaiset. Hacklab oli alusta alkaen pyrkimässä kasvattamaan jäsenmääräänsä ja olemaan määrittelemättä toimintaansa tavoitteita tai valittuja työmenetelmiä sen erityisemmin. Tässä suhteessa hacklab-toiminta eroaa myös radioamatööritoiminnasta, jossa harrastukseen ei liity mitään kaikille yhteistä opeteltavaa tietomäärää, vaan oma kiinnostus ohjaa kaikkea rakentamista.
 
 \uusivuosi{2010} %%%%%%%%%%%%  2010 %%%%%%%%%%%%%%%
-\section*{Helsinki Hacklab ry.}
+%\section*{Helsinki Hacklab ry.}
+\textbf{Helsinki Hacklab ry.}
 
 Kädenvääntö yhdistyksen perustamisen puolesta oli käyty läpi ja tiukimmat pseudonyymeilijät lähteneet tuntemattomille teille. Tilan vuokraaminenkin ilman yhdistystä oli osoittautunut mahdottomaksi. Perustamiskokous järjestäytyi pian vuoden alkamisen jälkeen, ja samalla käynnistyi yhteistyö taidetila Ptarmiganin kanssa. Taidetilassa järjestettyjen ensimmäisten avointen päivien suosio yllätti perustajat, ja jäsenmäärä nousi nopeasti ensimmäisten kuukausien aikana. Mediakynnys ylitettiin Ylioppilaslehdessä vain pari kuukautta perustamisen jälkeen. Yhteistyökuvio toimi aloittelevalle ryhmälle oikein mukavasti, sillä korvausta tilan käytöstä ei pyydetty.
 Ensimmäisen hallituksen puheenjohtajaksi valittiin Kim Kauppila.
@@ -267,7 +285,7 @@ Nilsiänkadun rakennuksen välittäjän kanssa päästiin lopulta yhteisymmärry
 Toiminnassa otettiin pian mukaan kansainvälinen malli. Vuodelta 2007 periytyvä Hackerspace Design Patterns -dokumentti oli luettu tarkkaan, sillä viikkokokoontumiset päätettiin jatkossa pitää maailmanlaajuiseen tapaan aina tiistaisin. Parhaita mahdollisia käytäntöjä jouduttiin kuitenkin etsiskelemään vielä pitkään, ja kesti jonkin aikaa ennen kuin vanhojen tietokoneiden raatojen sisään kantamista alettiin rajoittaa. Tilan käytön suunnittelussa ensisijaisina tarpeina nähtiin elektroniikkahuone sekä yhteinen hengailu- ja koulutustila.
 
 \uusivuosi{2011} %%%%%%%%%%%%  2011 %%%%%%%%%%%%%%%
-\section*{Reaktorisimulaattori}
+\textbf{Reaktorisimulaattori}
 
 Tammikuussa yhdistyksen jäsenmäärä lähestyi sataa, ja tilasta voitiin ottaa yksi huone lisää yhteiseen käyttöön. Tähän ns. mediahuoneeseen kertyi vuosien aikana tietokoneita, tulostimia, 3D-tulostin ja optinen kaiverrin. Hacklabin toimintaa esiteltiin alkuvuodesta Tekniikka\&Talous-lehdessä, ja 3D-tulostamisen ympärille vähitellen kertyneen mediakiinnostuksen vuoksi Hacklabin jäseniä haastateltiin nopeasti myös MTV3:n uutisten loppukevennykseen.
 
@@ -282,7 +300,7 @@ Reaktorisimulaattorin rakentamisessa kiinnitettiin paljon huomiota koneen nappie
 Koko kevään kestänyt Epäteoreettisen Elektroniikan Perusteet -kurssi käynnistyi nipin napin jo vuoden 2010 puolella, ja ensimmäinen istunto pidettiin joulun välipäivinä. Kurssin päävetäjinä toimivat Willi ja Jari. Kurssin sisällöstä ei ollut ensimmäisen sähköpostitse lähteneen ilmoituksen lisäksi olemassa sen tarkempaa suunnitelmaa, ja materiaalia tuotettiin sitä mukaa kun kurssi eteni. Tuona keväänä syntyivät edelleenkin käytössä olevat siniset kalvosarjat, joiden graafinen ilme koostui OpenOfficen vakiopohjasta, johon oli lätkäisty Hacklabin logo. Opetustilat ja -välineet eivät olleet vielä tuolloin kovin vakiintuneet: tilan ahtauden vuoksi videotykille ei ollut kiinteää paikkaa, valkotaulu sijaitsi piirtoheittimen kannalta hankalassa paikassa ja kurssi alkoi aina jalustalla seisovan valkokankaan virittelyllä. Kevällä jatkettiin digitaalitekniikan parissa teemalla \textit{EEP goes digital}. Pitkäkestoinen kurssisarja jatkui vielä seuraavankin vuoden keväälle asti. Kurssin aiheet etenivät perusporttipiireistä päättyen sekvenssilogiikan kiemuroihin, sekä erilaisiin sarjaliitäntöihin, kuten RS232, SPI ja I2C. Kurssin päättyessä kevällä 2012 oltiin edetty jo CPLD- ja FPGA-piireihin, ja tässä vaiheessa osallistujamäärä oli supistunut jo pienen opintopiirin kokoiseksi.
 
 \uusivuosi{2012} %%%%%%%%%%%%  2012 %%%%%%%%%%%%%%%
-\section*{Hacklab.fi}
+\textbf{Hacklab.fi}
 
 Vuosi alkoi heti tammikuussa jokavuotiseksi perinteeksi muodostuneella Hackerspace Summit Finland -tapahtumalla Tampereella. Yhteistä toimintaa eri kaupunkien yhdistysten välillä ei ollut aiemmin IRC-kanavaa lukuun ottamatta. Ensimmäistä kokoontumista varten kerättiin jopa esityslista, jossa päästiin kaiken huipuksi pohtimaan yhteistä brändiä. Kuten alkuinnostukseen täytyykin kuulua, olivat suunnitelmat suuria ja mikään ei tuntunut mahdottomalta. Tapahtuman englanninkielinen nimikin valittiin siinä toivossa, että paikalle olisi saapunut kansainvälisempi osallistujajoukko.
 
@@ -297,7 +315,7 @@ Uusi harrasterakenteluun ja tee-se-itse -kulttuuriin keskittyvä viikonlopputapa
 Yhteistyö laajeni yhä erilaisempiin suuntiin: muutamat Hacklabin jäsenet ottivat osaa mm. Vantaan taidemuseossa esillä olleeseen Harri Larjoston robottiteokseen, jonka tekniikka perustui ohjauselektroniikaltaan muokattuihin siivousrobotteihin. Pienoismallikerhon \textit{Stadi-mallarit} kanssa sovittiin yhteistyöstä tilojen käytöstä jäsenten kesken, sillä tuolloin työpajamme sijaitsivat vielä melko lähellä toisiaan.
 
 \uusivuosi{2013} %%%%%%%%%%%%  2013 %%%%%%%%%%%%%%%
-\section*{Kasvu jatkuu}
+\textbf{Kasvu jatkuu}
 % tästä puutuu edelleen liian paljon... tarvitsee materiaalia
 %\textcolor{gray}{\lipsum[1]}
 
@@ -312,7 +330,7 @@ Tapahtumissa käytiin entistäkin ahkerammin, vaikka organisointi ei onnistunutk
 Yhdistys on toiminut itsenäisesti ja jäsenten rahoittamana alusta alkaen, ja ulkopuolinen apu on tullut lähinnä tavaralahjoitusten muodossa. VTT:ltä saimme elektroniikkahuoneeseen lukuisia säilytyslokeroita ja komponentteja. Tärkeä apu on ollut myös omien jäsentemme tilassa säilytetyt ja yhteiskäyttöön luovutetut omat työvälineet. Suoraa rahallista tukea Hacklab ei ollut vielä kolmen toimintavuotensa aikana kokeillut tai edes ymmärtänyt hakea, joten oli aika yrittää. Loppuvuodesta saadulla Fuugin säätiön avustuksella yhdistys pystyi lunastamaan yhteisomistukseen jo yhteisessä käytössä olleita jäsenten omilla rahoillaan ostamia laitteita ja hankkimaan myös täysin uusia koneita.
 
 \uusivuosi{2014} %%%%%%%%%%%%  2014 %%%%%%%%%%%%%%%
-\section*{Seuraava iso askel}
+\textbf{Seuraava iso askel}
 
 Alkuvuosi 2014 oli väsähtäneisyyden aikaa. Vanhat aktiivit olivat uupumassa vastuutehtäviinsä, tilassa oli välillä ahdasta ja kuumaa, uusien jäsenien sekä aktiivien haalimisen keinot olivat vähissä ja seuraava suunta kateissa. Nilsiänkadun rakennuksessa vallitsi levoton ilmapiiri, mutta pahimpana kaikesta olivat muutamat ongelmalliset ja vaaratilanteita aiheuttaneet jäsenet, jotka veivät energiaa kaikelta muulta tärkeältä. Yhdistyksen käytös- ja turvallisuussääntöjä muokattiin sitä mukaa kun kohdattiin uusia ongelmia: esimerkiksi maaliskuussa jouduttiin puuttumaan häiritseviin poliittisiin kannanottoihin sähköpostilistalla. Hallitus väsähti järjestyksen ylläpitoon ja syntyneiden vahinkojen korjaamiseen, eikä asiaa edes pyritty piilottelemaan vaan tuotiin ilmi paineventtiilin tavoin toimineella sähköpostilistalla kaikille jäsenille. Tilaan asennettiin valvontakamera, turvallisuussääntöjä jouduttiin korostamaan ja lopulta jouduttiin antamaan ensimmäinen porttikielto tilaan. Yhdistys oli viimeistään nyt kasvanut isoksi.
 
@@ -331,7 +349,7 @@ Uutta tilaa kesällä etsinyt toimikunta löysi lopulta Pitäjänmäestä sovelt
 Muutosta huolimatta digitaalielektroniikan kurssi \textit{dEEP} saattin käynnistettyä uudelleen alkusyksyllä 2014. Aiemmasta oppineina kurssimateriaalista suunniteltiin paljon sisältöä uusiksi, erityisesti harjoitustöiden puolella. Nyt pyrittiin rakentamaan joka kerta leipälaudan kanssa esimerkkikytkentöjä käsitellyistä aiheista. Kurssille valittiin rauhallinen etenemistahti, ja koko syksy saatiinkin kulutettua aloittelijaystävällisesti peruslogiikoiden parissa. Vaikka keväällä oltiin jo edetty CPLD-maailmaan ja FPGA:han, on kurssimaisen linjan vuoksi opetustilanne pysynyt kasassa ihan eri tavalla kuin viimeksi.
 
 \uusivuosi{2015} %%%%%%%%%%%%  2015 %%%%%%%%%%%%%%%
-\section*{Lotta on jylsijä}
+\textbf{Lotta on jylsijä}
 
 Vuonna 2015 yhdistyksellä on ollut paremmat mahdollisuudet ja yhä enemmän innostuneita jäseniä järjestämään koulutusta ja lyhyitä kursseja. Takkatien tilat suunniteltiin muuton yhteydessä siten, että kaikki koulutus voidaan järjestää tilan omassa luokkahuoneessa, eikä koulutuksia tarvinnut enää järjestää yhdistyksen omien tilojen ulkopuolella. Toivotuimmat kurssit ovat vuodesta toiseen edelleen Arduino sekä elektroniikan alkeet. Jokaviikkoista digitaalielektroniikan kurssisarjaa on onnistuttu pitämään säännöllisesti, vaikka tilan remontti on ollut pahastikin kesken. Kurssisarja on ollut laajin ja syventävin toistuva koulutus, mitä yhdistys on koskaan järjestänyt. Jauteron aloittama ompelukerho laajensi toimintaa taas uusille alueille, ja Kremmenin ottama iso vastuu koulutuksista piti huolen siitä, että kaiken keskeneräisyyden ja remontin keskellä muistettiin välillä myös häksätä.
 
@@ -349,11 +367,17 @@ Kesällä ja sitä ennenkin oirehtinut viemäriputki hajosi lopullisesti elokuus
 
 Yhdistyksen aktiivit olivat jo pidemmän aikaa selailleet sivusilmällä sopivia uusia työstökoneita metallipuolen työtilaan. Loppusyksystä Kremmen bongasi vihdoin meille soveliaan ja sopivan kokoisen, kolme tonnia painavan, 3+1-akselisen, Iisalmessa sijaitsevan CNC-työstökeskuksen. Vaikka se veikin yhden pienen huoneen verran tilaa, niin pakkohan se oli saada. Onnistuneen huutokaupan, Helsinkiin rahtaamisen ja budjetoinnin jälkeen selvitettäväksi jäi enää, mahtuuko kone ovesta sisään. Naapurimme Siriuksen varastotilasta purettiin luvan kanssa seinää pois, ja nimen Lotta saanut CNC-keskus pääsi perille niin kuin pitikin. Lokakuussa aloitettiin välittömästi suuren suosion saanut kurssitus koneen käyttöön, samaan aikaan kun selvitettiin, miten pikkuvikainen kone saataisiin toimintakuntoon.
 
-Läbiaktiivien loppuvuosi kului täysin Lottaan kaadettujen työtuntien parissa. Koulutuskierros lähti käytön perusteiden jälkeen heti CAM-kurssitukseen ja mallintamiseen. Puutyöhuone siirrettiin nyt elektroniikkahuoneen viereen, kun verstaalle vihdoin löytyi tilavastaavaksi lupautunut uusi aktiivi Depili. Yhdistyksen budjetointi meni kitkutellen vuoden loppua kohti, vessaremontti kesti odotettua kauemmin, eikä ulkopuolisia avustuksia suurista toiveista huolimatta heltynyt. Tekemisen into oli kuitenkin löytynyt uudestaan, ja yhteistyö Avaruustutkimusseuran kanssa toi paljon uutta innostunutta väkeä auttamaan mm. maalausnurkan suunnittelussa ja toteuttamisessa.
+Läbiaktiivien loppuvuosi kului täysin Lottaan kaadettujen työtuntien parissa. Koulutuskierros lähti käytön perusteiden jälkeen heti CAM-kurssitukseen ja mallintamiseen. Puutyöhuone siirrettiin nyt elektroniikkahuoneen viereen, kun verstaalle vihdoin löytyi tilavastaavaksi lupautunut uusi aktiivi Depili. Yhdistyksen budjetointi meni kitkutellen vuoden loppua kohti ja vessaremontti kesti odotettua kauemmin. Tekemisen into oli kuitenkin löytynyt uudestaan, ja yhteistyö Avaruustutkimusseuran kanssa toi paljon uutta innostunutta väkeä auttamaan mm. maalausnurkan suunnittelussa ja toteuttamisessa.
 
+\pagebreak % workaround!
 \uusivuosi{2016} %%%%%%%%%%%%  2016 %%%%%%%%%%%%%%%
+\textbf{Tulityötila}
 
-Odotettu uusi jäsenrekisteri ja Holvi-maksujen käsittely otettiin käyttöön heti tammikuussa helpottamaan rahastonhoitajan ja sihteerin töitä.
+Odotettu uusi jäsenrekisteri ja Holvi-maksujen käsittely otettiin käyttöön heti tammikuussa helpottamaan rahastonhoitajan ja sihteerin töitä. Jäsenmaksut saatiin kerättyä huomattavasti vaivattomammin ja uusien hankintojen kulukorvaukset pysyivät paremmin järjestyksessä. Järjestelmää esiteltiin myös Tampereella HSF16-tapahtumassa muille läbeille. Tampereen tapahtumaan osallistui tällä kertaa myös uusin tulokas Suomen skenessä, edellisen vuoden puolella perustettu Kuopio Hacklab.
+
+\merkkitapahtuma{27.2.2016 Suomen Kulttuurirahaston apuraha}
+
+Vuoden 2015 lopussa näytti siltä, että remonttia ei saataisi pitkään aikaan vietyä kunnolla loppuun ilman ulkoista rahoitusta, joten laitoimme muutamia apurahahakemuksia muutamiin kulttuurin ja tieteen isoihin hakukierroksiin. Aiempien yhteistyöprojektien kautta järjestyi lausunnot hakemuksien liitteiksi. Hakemuksen kirjoitti jssmk, joka yritti etsiä uudenlaista lähestymistapaa toiminnan kuvailussa lukemalla aiempia muille myönnettyjen hakemusten käyttökohteita ja -kertomuksia. Vertailun perusteella toiminnassamme löytyi paljon yhteistä muihin rahoitettuihin hankkeisiin sekä taiteen että koulutuksen aloilta. Yllätykseksi helmikuussa Suomen Kulttuurirahaston keskusrahasto ilmoittikin, että olimme saaneet 14 tuhannen euron rahoituksen. Avustus myönnettiin tulityötilan remonttiin ja työkaluhankintoihin muotoilun ja taidekäsityön apurahoista. Rakentaminen aloitettiin välittömästi.
 
 \section*{Yhteisöllinen työtila}
 
