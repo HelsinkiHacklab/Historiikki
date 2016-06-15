@@ -46,7 +46,7 @@ karsina_maara$x <- as.Date(c("2015-02-05",
 
 # Holvissa maksetut jäsenmaksut vuodelle 2016
 holvi_maara <- list()
-holvi_maara$y <- c(265)
+holvi_maara$y <- c(173)
 holvi_maara$x <- as.Date(c("2016-06-15"))
 
 
