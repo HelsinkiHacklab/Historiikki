@@ -31,18 +31,23 @@ wiki_maara$x <- as.Date(c("2010-02-07",
 
 
 
-# Tiedot jäsenrekisteri karsinasta
+# Tiedot jäsenrekisteri karsinasta/lataamosta
 karsina_maara <- list()
 karsina_maara$y <- c(271,
                      251, # pudotusta jäsenmäärässä, jäsenrekisterin siivous vai onko 1. luku väärin?
                      260,
                      272,
-                     283)
+                     283,
+                     291,
+                     207)
 karsina_maara$x <- as.Date(c("2015-02-05",
                              "2015-04-01",
                              "2015-06-23",
                              "2015-10-22",
-                             "2016-01-14"))
+                             "2016-01-14",
+                             "2016-06-15", # vähän ennen rekisterin siivousta
+                             "2016-06-16"  #siivouksen jälkeen
+                             ))
 
 # Holvissa maksetut jäsenmaksut vuodelle 2016
 holvi_maara <- list()
@@ -127,13 +132,15 @@ karsina_avain$y <- c(26, # = 37 (total) - 10 (erikois) - 1 (revoked)
                      32, # = 44 (total) - 11 (erikois) - 1 (revoked)
                      41, # = 54 (total) - 12 (erikois) - 1 (revoked)
                      47, # = 61 (total) - 12 (erikois) - 2 (revoked)
-                     48) # = 62 (total) - 12 (erikois) - 2 (revoked)
-
+                     48, # = 62 (total) - 12 (erikois) - 2 (revoked)
+                     39, # karsinassa = 66 (total) - 12 (erikois) - 2 (revoked) , lataamossa vain 39 avainjäsentä
+                     )
 karsina_avain$x <- as.Date(c("2015-02-05",
                              "2015-04-01",
                              "2015-06-23",
                              "2015-10-22",
-                             "2016-01-14"))
+                             "2016-01-14",
+                             "2016-07-07"))
 
 
 kaikki_maara <- list()
@@ -165,16 +172,18 @@ selite <- data.frame(
         as.Date("2013-01-01"),
         as.Date("2013-07-01"),
         as.Date("2014-01-01"),
-        as.Date("2014-07-01")       
+        as.Date("2014-07-01"),
+        as.Date("2016-06-16")
         ),
-  y = c(150, 150, 40, 150, 200, 180, 200, 220, 240),
+  y = c(150, 150, 40, 150, 200, 180, 200, 220, 240, 180),
   text = c("Nilsiänkatu",
            "Takkatie",
            "Avainlukumäärät avainkuiteista",
            "Jäsenlukumäärät blogista, wikistä ym.",
            "Jäsenlukumäärät \nja avaimet\njäsenrekisteristä",
-           "?", "?", "?", "?"),
-  kulma = c(90, 90, 0, 30, 0, 0, 0, 0, 0)
+           "?", "?", "?", "?",
+           "Jäsenrekisterin siivous maksamattomista jäsenistä"),
+  kulma = c(90, 90, 0, 30, 0, 0, 0, 0, 0, 0)
   #,koko = c(2,2,2,2,2,1,1,1,1)
 )
 selite_kuvaaja <- geom_text(data=selite,
