@@ -133,7 +133,7 @@ karsina_avain$y <- c(26, # = 37 (total) - 10 (erikois) - 1 (revoked)
                      41, # = 54 (total) - 12 (erikois) - 1 (revoked)
                      47, # = 61 (total) - 12 (erikois) - 2 (revoked)
                      48, # = 62 (total) - 12 (erikois) - 2 (revoked)
-                     39, # karsinassa = 66 (total) - 12 (erikois) - 2 (revoked) , lataamossa vain 39 avainjäsentä
+                     39 # karsinassa = 66 (total) - 12 (erikois) - 2 (revoked) , lataamossa vain 39 avainjäsentä
                      )
 karsina_avain$x <- as.Date(c("2015-02-05",
                              "2015-04-01",
@@ -182,7 +182,7 @@ selite <- data.frame(
            "Jäsenlukumäärät blogista, wikistä ym.",
            "Jäsenlukumäärät \nja avaimet\njäsenrekisteristä",
            "?", "?", "?", "?",
-           "Jäsenrekisterin siivous maksamattomista jäsenistä"),
+           "Jäsenrekisterin\nsiivous\nmaksamattomista\njäsenistä"),
   kulma = c(90, 90, 0, 30, 0, 0, 0, 0, 0, 0)
   #,koko = c(2,2,2,2,2,1,1,1,1)
 )
